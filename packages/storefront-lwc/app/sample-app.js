@@ -17,6 +17,10 @@ import '@sfcc-core/core-graphql';
 //
 import '@sfcc-bff/productapi';
 import '@sfcc-bff/basketapi';
+
+//CMS Extension
+import '../../cms/cmsapi';
+
 //
 // Import Keys needed to access core services end extensions
 //

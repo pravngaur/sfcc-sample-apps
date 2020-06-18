@@ -1,0 +1,18 @@
+{
+  "name": "cms",
+  "version": "1.0.0-cms",
+  "description": "This is for CMS integration",
+  "main": "cmsapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sfcc-core/core": "1.0.0-alpha.2",
+    "@sfcc-core/core-graphql": "1.0.0-alpha.2",
+    "lodash": "^4.17.15",
+    "request-promise": "^4.2.5",
+    "node-salesforce-connection": "^2.3.1"
+  }
+}

@@ -30,7 +30,8 @@
       "packages/sfcc-base",
       "packages/@sfcc-core/*",
       "packages/@sfcc-bff/*",
-      "packages/storefront-lwc"
+      "packages/storefront-lwc",
+      "packages/cms"
     ],
     "nohoist": [
       "**/bootstrap",

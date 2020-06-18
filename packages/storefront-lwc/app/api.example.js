@@ -21,6 +21,13 @@ const COMMERCE_CLIENT_INSTANCE_ID = '';
 const COMMERCE_CLIENT_ORGANIZATION_ID = `f_ecom_${COMMERCE_CLIENT_REALM_ID}_${COMMERCE_CLIENT_INSTANCE_ID}`;
 const COMMERCE_CLIENT_SHORT_CODE = 'your.instance';
 
+// CMS Configs
+const CMS_GRANT_TYPE = 'password';
+const CMS_CLIENT_ID = 'Client ID of the connected App';
+const CMS_CLIENT_SECRET = 'Client Secret of the connected App';
+const CMS_USERNAME = 'Integration users username';
+const CMS_PASSWORD = 'Integration users password';
+
 // Available Log Levels for the Application
 const LOG_LEVEL_MAP = {
     TRACE: 0,
@@ -44,4 +51,9 @@ export default {
     COMMERCE_CLIENT_SHORT_CODE,
     COMMERCE_LOG_LEVEL,
     COMMERCE_SESSION_SECRET,
+    CMS_GRANT_TYPE,
+    CMS_CLIENT_ID,
+    CMS_CLIENT_SECRET,
+    CMS_USERNAME,
+    CMS_PASSWORD,
 };

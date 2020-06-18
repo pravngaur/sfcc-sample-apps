@@ -10,6 +10,7 @@
         "name": "Launch with Watcher",
         "runtimeExecutable": "npm",
         "restart": true,
+        "runtimeVersion": "12.16.0",
         "runtimeArgs": [
             "run-script",
             "start:dev"
