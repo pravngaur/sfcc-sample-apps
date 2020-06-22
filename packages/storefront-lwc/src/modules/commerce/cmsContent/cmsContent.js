@@ -19,9 +19,6 @@ export default class CmsContent extends LightningElement {
         contentType: '',
     };
 
-    //TODO: Move this middleware path to config file
-    imagePath = 'https://immense-reaches-30678.herokuapp.com/';
-
     @track cmsText = '';
     @track cmsImageName = '';
     @track cmsResolver = {};
@@ -60,7 +57,10 @@ export default class CmsContent extends LightningElement {
                 this.cmsResolver = response.data.cmsResolver;
                 this.cmsText = response.data.cmsResolver.ContentNodes.excerpt.value;
                 var apiImageName = response.data.cmsResolver.ContentNodes.bannerImage.fileName;
-                this.cmsImageName = '$imagePath' + apiImageName;
+                //TODO: Move this middleware hostname/url to config file
+                let imagePath = 'https://immense-reaches-30678.herokuapp.com/getContent?imageName=';
+                console.log(imagePath + apiImageName);
+                this.cmsImageName = imagePath + apiImageName;
             }
         } else {
             console.log('Response not initialized');
