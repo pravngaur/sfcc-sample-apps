@@ -1,19 +1,19 @@
 # Purpose
 
-This sample integration with CMS is to relise the impact & power of connected experiences. With Commerce 20.2 release, you can access the CMS content in the Commerce Storefront via [Page Designer] (https://help.salesforce.com/articleView?id=b2c_20_2_pagedesigner.htm&type=5)  & with this CMS integration, the same content can be accessed in Commerce Headless Application.
+This sample integration with CMS is to relize the impact & power of connected experiences. With Commerce 20.2 release, you can access the CMS content in the Commerce Storefront via [Page Designer](https://help.salesforce.com/articleView?id=b2c_20_2_pagedesigner.htm&type=5)  & with this CMS integration, the same content can be accessed in Commerce Headless Application.
 
 This integration will also serve as a sample integration, which you can use for your own learnings or as a starting point for the custom integrations that you may be working on.
-This follows the recommended design principles, as explained in [Customization Documentation] (https://github.com/SalesforceCommerceCloud/sfcc-sample-apps/blob/master/docs/componentExtension.md).
+This follows the recommended design principles, as explained in [Customization Documentation](https://github.com/SalesforceCommerceCloud/sfcc-sample-apps/blob/master/docs/componentExtension.md).
 
 But please note, this is only a sample implementation & will certainly require modifications/updates before can be used in real customer engagements. These modifications may be related to Security or Governance policies(Authorization/Authentication/Monitoring or governance aspects) or could be related to customer custom needs. Implementations based on this sample extension, should be completely owned & tested by the Partner/Customer. 
 
 # Architecture Overview
 
-The content is accessed from CMS via the [Delivery APIs] (https://developer.salesforce.com/docs/atlas.en-us.224.0.chatterapi.meta/chatterapi/connect_resources_managed_content_resources.htm).
+The content is accessed from CMS via the [Delivery APIs](https://developer.salesforce.com/docs/atlas.en-us.224.0.chatterapi.meta/chatterapi/connect_resources_managed_content_resources.htm).
 
 This integration is inline to the native CMS & Commerce integration which relies on the CMS 'Content Type' while designing the Page Designer custom components.
 
-From Headless Appllication, [Channel API] (https://developer.salesforce.com/docs/atlas.en-us.224.0.chatterapi.meta/chatterapi/connect_resources_managed_content_delivery_channel.htm) is used to get the content of a given Content Type. Content Type & the ID of the content is required while usign this API.
+From Headless Appllication, [Channel API](https://developer.salesforce.com/docs/atlas.en-us.224.0.chatterapi.meta/chatterapi/connect_resources_managed_content_delivery_channel.htm) is used to get the content of a given Content Type. Content Type & the ID of the content is required while usign this API.
 
 CMS returns the content, the content structure is inline with the Content Type. The images are not available on public URL(as of now), so a different API call is required to get the images. The relative path of the image, is returned in the Delivery API response, which then is used in the second API call to get the image.
 
@@ -53,11 +53,9 @@ All the external integrations needs to be implemented using the Apollo GraphQL. 
 
 TypeDefs defines the structure of the data which Resolvers provides the implementation for calling the external systems.
 
-Please review:
+For more details, please review:
 - packages/cms/api/schema/cmsResolvers.js
 - packages/cms/api/schema/cmsTypeDefs.js
-
-for more details.
 
 Once the TypeDefs & Resolvers are defined, these needs to be registered with the GraphQL Service as Extensions.
 For that, each extension has to use the core.registerExtension heler method & provide the required details. Please review cmsapi.js(packages/cms/cmsapi.js) for details.
